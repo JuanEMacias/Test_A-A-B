@@ -22,7 +22,7 @@ Cada entrada de registro es una acción de usuario o un evento.
 ## Tecnologías
 ***
 Los recursos utilizados en este proyecto son:
-* Librerpias de Python 
+* Librerías de Python 
 	* Pandas 
 	* Numpy
 	* Matplotlib
