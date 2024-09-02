@@ -11,12 +11,49 @@ Los usuarios se dividen en tres grupos: dos grupos de control obtienen las fuent
 
 Se utilizará el mismo dataset para el análisis general y para el análisis A/A/B, cuyos datos son los siguientes: 
 
-#### Descripción de los datos
+## Descripción de los datos
 Cada entrada de registro es una acción de usuario o un evento.
 *	EventName: nombre del evento.
 *	DeviceIDHash: identificador de usuario unívoco.
 *	EventTimestamp: hora del evento.
 *	ExpId: número de experimento: 246 y 247 son los grupos de control, 248 es el grupo de prueba.
+
+## Tareas 
+
+### 1. Preparar los datos para el análisis
+* Cambiamos el nombre de las columnas de manera que sea conveniente para ti
+* Corregimos los tipos de datos, así como valores ausentes y/o duplicados 
+* Agregamos una columna de fecha y hora y una columna separada para las fechas
+  
+### 1. Estudiar y comprobar los datos
+Para realizar esta tarea buscaremos respuesta a las siguientes preguntas: 
+* ¿Cuántos eventos hay en los registros?
+* ¿Cuántos usuarios y usuarias hay en los registros?
+* ¿Cuál es el promedio de eventos por usuario?
+* ¿Qué periodo de tiempo cubren los datos?
+* ¿Podemos tener seguridad de que hay datos igualmente completos para todo el periodo?
+ * ¿Qué periodo representan realmente los datos?
+* ¿Perdimos muchos eventos y usuarios al excluir los datos más antiguos?
+  
+### 3. Estudiar el embudo de eventos
+Observaremos qué eventos hay en los registros y su frecuencia de suceso. 
+Encontramos la cantidad de usuarios y usuarias que realizaron cada una de estas acciones. 
+Después ordenamos los eventos por el número de usuarios y usuarias. 
+Finalmente calculamos la proporción de usuarios y usuarias que realizaron la acción al menos una vez. 
+Una vez tenemos estos insights, se responden las siguientes preguntas:
+* ¿En qué orden crees que ocurrieron las acciones? 
+* ¿Cuál es la proporción de usuarios y usuarias que pasan de una etapa a la siguiente? (Por ejemplo, para la secuencia de eventos A → B → C, se calcula la proporción de usuarios en la etapa B a la cantidad de usuarios en la etapa A y la proporción de usuarios en la etapa C a la cantidad en la etapa B).
+* ¿En qué etapa se pierden más usuarios y usuarias?
+* ¿Qué porcentaje de usuarios y usuarias hace todo el viaje desde su primer evento hasta el pago?
+### 4. Estudiar los resultados del experimento
+Tenemos dos grupos de control en el test A/A, donde comprobamos nuestros mecanismos y cálculos. Observaremos primero si hay una diferencia estadísticamente significativa entre las muestras 246 y 247.
+
+Seleccionamos el evento más popular. En cada uno de los grupos de control, encontramos la cantidad y proporción de usuarios y usuarias que realizaron esta acción. 
+Comprobamos si la diferencia entre los grupos es estadísticamente significativa y se repite el procedimiento para todos los demás eventos 
+
+Haremos lo mismo para el grupo con fuentes alteradas, comparando los resultados con los de cada uno de los grupos de control para cada evento de forma aislada. 
+Finalmente comparamos los resultados con los resultados combinados de los grupos de control.
+
 
 
 ## Tecnologías
@@ -31,3 +68,6 @@ Los recursos utilizados en este proyecto son:
   * Plotly
 
 * Jupyter Notebooks
+
+## Uso del código 
+
