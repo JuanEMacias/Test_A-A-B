@@ -18,6 +18,9 @@ Cada entrada de registro es una acción de usuario o un evento.
 *	EventTimestamp: hora del evento.
 *	ExpId: número de experimento: 246 y 247 son los grupos de control, 248 es el grupo de prueba.
 
+![Muestra de los datos](https://github.com/user-attachments/assets/d39c0a53-e91c-401e-914f-6d43f4f4a7d7)
+
+
 ## Tareas 
 
 ### 1. Preparar los datos para el análisis
@@ -69,5 +72,9 @@ Los recursos utilizados en este proyecto son:
 
 * Jupyter Notebooks
 
+Utilizamos Pandas y Numpy principalmente para la limpieza y preparación de los datos, utilizamos Matplotlib y Seaborn para visualizar las estadísticas adecuadas sobre todo aquellas que indican la distribución de los datos, en el caso de la visualización de embudos al requerir gráficas más interactivas usamos la librería Plotly. 
+Finalmente para el análisis estadístico y pruebas de hipótesis se usó la librería de Scipy stats
+
 ## Uso del código 
+Todos los bloques de código se encuentran en el archivo .ipynb y el set de datos en el arhivo .csv. Para utilizarlo descargar los archivos csv, copie el cuaderno y ejecute los bloques de código.
 
